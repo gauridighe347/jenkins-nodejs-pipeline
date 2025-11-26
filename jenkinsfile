@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    IMG_NAME = 'gauridighe2004/node_img'
+    IMG_NAME = 'gauri2004/node_img'
     PORT_MAPPING = '8081:3000'
     MINIKUBE_IP = '3.110.138.250'
   }
