@@ -33,7 +33,7 @@ pipeline {
     stage('Push Image') {
       steps {
         withCredentials([usernamePassword(
-          credentialsId: 'docker-crediantial',
+          credentialsId: 'docker-credential',
           usernameVariable: 'MY_DOCKER_USER',
           passwordVariable: 'MY_DOCKER_PASS'
         )]) {
