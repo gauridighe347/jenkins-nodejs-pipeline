@@ -9,7 +9,7 @@
   - Port **30080** → NodePort Service
   - Outbound Internet access (for Docker pulls)
 
-  ![Website Screenshot](assets/instance.jpginstance.png)
+  ![Website Screenshot](assets/instance.jpg)
 
   Security Groups
 
