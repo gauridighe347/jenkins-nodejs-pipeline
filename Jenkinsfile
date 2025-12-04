@@ -4,7 +4,7 @@ pipeline {
   environment {
     IMG_NAME = 'gauri2004/node_img'
     PORT_MAPPING = '8081:3000'
-    MINIKUBE_IP = '3.110.138.250'
+    MINIKUBE_IP = '15.207.108.203'
   }
 
   stages {
@@ -33,7 +33,7 @@ pipeline {
     stage('Push Image') {
       steps {
         withCredentials([usernamePassword(
-          credentialsId: 'docker-crediantials',
+          credentialsId: 'docker-credential',
           usernameVariable: 'MY_DOCKER_USER',
           passwordVariable: 'MY_DOCKER_PASS'
         )]) {
@@ -51,17 +51,17 @@ pipeline {
 
           // Upload both YAML files
           sh """
-            scp -i "$SSH_KEY" -o StrictHostKeyChecking=no deployment.yaml service.yml \
+            scp -i "$SSH_KEY" -o StrictHostKeyChecking=no deployment.yml service.yml \
             ubuntu@${MINIKUBE_IP}:/home/ubuntu/
           """
 
           // Apply deployment & service on EC2’s Minikube
           sh """
             ssh -i "$SSH_KEY" -o StrictHostKeyChecking=no ubuntu@${MINIKUBE_IP} '
-              kubectl delete -f deployment.yaml --ignore-not-found=true
+              kubectl delete -f deployment.yml --ignore-not-found=true
               kubectl delete -f service.yml --ignore-not-found=true
 
-              kubectl apply -f deployment.yaml
+              kubectl apply -f deployment.yml
               kubectl apply -f service.yml
 
               kubectl get pods -o wide
