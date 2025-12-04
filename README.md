@@ -13,7 +13,7 @@
 
   Security Groups
 
-  ![Website Screenshot](assets/Screenshot%202025-11-18%20000240.png)
+  ![Website Screenshot](assets/sg.jpg)
 
 ### 2️⃣ Tools Installed on EC2
 - **Docker**
@@ -38,7 +38,7 @@
   - Username: `ubuntu`
 
   
-![Website Screenshot](assets/Screenshot%202025-11-18%20000635.png)
+![Website Screenshot](assets/credential.jpg)
 
 
 ## 🧪 Testing with Jest
@@ -65,12 +65,12 @@ This pipeline auto-builds on every GitHub push using a webhook pointing to Jenki
 
 ## Jenkins Pipeline build successful
 
-![Website Screenshot](assets/Screenshot%202025-11-18%20000329.png)
+![Website Screenshot](assets/jenkins-pipeline.jpg)
 
 
 ## Verfiy pods on EC2 Instance
 
-![Website Screenshot](assets/Screenshot%202025-11-18%20001213.png)
+![Website Screenshot](assets/pod.jpg)
 
 
 ##  Port Forward to access application
@@ -84,5 +84,5 @@ Access the app
 ```bash
 http://<EC2_PUBLIC_IP>:3000/
 ```
-![Website Screenshot](assets/Screenshot%202025-11-18%20000250.png)
+![Website Screenshot](assets/output.jpg)
 
